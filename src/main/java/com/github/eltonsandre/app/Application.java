@@ -6,11 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+@Slf4j
 @SpringBootApplication
 public class Application extends javafx.application.Application {
 
@@ -35,6 +37,7 @@ public class Application extends javafx.application.Application {
     }
 
     private static void showErrorDialog(final Thread thread, final Throwable throwable) {
+        log.error("{}", throwable.getMessage(), throwable);
         AlertUtils.error("Erro não tratado", throwable.getMessage());
     }
 

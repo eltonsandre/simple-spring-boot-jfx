@@ -35,3 +35,4 @@ out/
 src/main/resources/templates/tabs/*
 data/*
 */*.mv.db
+/src/main/generated/*
